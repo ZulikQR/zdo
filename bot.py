@@ -84,7 +84,7 @@ def save_question(message):
     username = message.from_user.username
     question = message.text
     bot.send_message(admin_id, f"<b>Вопрос</b>\nОт - @{username}\n\nВопрос - {question}",
-                     reply_markup=telebot.types.InlineKeyboardMarkup()
+                     reply_markup=telebot.types.InlineKeyboardMarkup() , parse_mode = 'html'
                      .add(telebot.types.InlineKeyboardButton('Ответить', callback_data='answer')))
     bot.send_message(chat_id, "<code>Ваш вопрос был успешно отправлен админу</code>" , parse_mode = 'html')
 
